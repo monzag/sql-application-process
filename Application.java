@@ -10,14 +10,17 @@ public class Application {
     public static final int ADD_NEW_APPLICANT = 5;
     public static final int UPDATE_APPLICANT = 6;
     public static final int DELETE_APPLICANT = 7;
-    public static final int ADVANCED_SEARCH = 8;
+    public static final int EXIT = 0;
 
     public static void main(String[] args) {
         Application app = new Application();
-        app.run();
+        boolean start = true;
+        while (start) {
+            start = app.run();
+        }
     }
 
-    public void run() {
+    public boolean run() {
         view.displayMenu();
         int userChoice = view.getUserChoice();
 
@@ -36,7 +39,10 @@ public class Application {
                 break;
             case DELETE_APPLICANT: deleteApplicant();
                 break;
+            case EXIT:
+                return false;
         }
+        return true;
     }
 
     public void displayMentorsByFullname() {;
