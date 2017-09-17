@@ -1,7 +1,7 @@
 SELECT first_name, last_name FROM mentors;
 
 
-SELECT city FROM mentors WHERE city='Miskolc';
+SELECT nick_name FROM mentors WHERE city='Miskolc';
 
 
 ALTER TABLE applicants ADD full_name text;
